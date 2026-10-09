@@ -34,6 +34,10 @@ public class ProductoServiceImpl implements ProductoService {
 
         Categoria categoria=buscarCategoria(dto.getId_categoria());
 
+        if (!categoria.getEstado()) {
+            throw new ReglaNegocioException("No se puede vincular el producto a una categoria inactiva");
+        }
+
         Producto producto=new Producto();
         producto.setNombre(nombre);
         producto.setPrecio(dto.getPrecio());
@@ -59,6 +63,10 @@ public class ProductoServiceImpl implements ProductoService {
         }
 
         Categoria categoria=buscarCategoria(dto.getId_categoria());
+
+        if (!categoria.getEstado()) {
+            throw new ReglaNegocioException("No se puede vincular el producto a una categoria inactiva");
+        }
         producto.setNombre(nombre);
         producto.setPrecio(dto.getPrecio());
         producto.setStock(dto.getStock());
@@ -81,7 +89,11 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete (Long id){
         Producto producto=productoRepository.findById(id)
                 .orElseThrow(()->new RecursosNoEncontradosException("Producto no encontrado con el id:"+ id));
-        productoRepository.delete(producto);
+        if (!producto.isEstado()) {
+            throw new ReglaNegocioException("El producto ya se encuentra inactivo");
+        }
+        producto.setEstado(false);
+        productoRepository.save(producto);
     }
 
     @Override
@@ -113,3 +125,4 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
 }
+
