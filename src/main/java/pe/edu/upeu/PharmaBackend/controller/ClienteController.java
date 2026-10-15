@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequestMapping("/api/clientes")
 public class ClienteController {
 
-    private final ClienteService clienteService;
+    private final ClienteServicec lienteService;
 
     public ClienteController(
             ClienteService clienteService) {
