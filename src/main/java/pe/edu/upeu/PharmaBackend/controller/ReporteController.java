@@ -10,11 +10,19 @@ import pe.edu.upeu.PharmaBackend.dto.reporte.ProductoMasVendidoDTO;
 import pe.edu.upeu.PharmaBackend.dto.reporte.VentaPorCategoriaDTO;
 import pe.edu.upeu.PharmaBackend.service.service.ReporteService;
 
+import org.springframework.security.access.prepost.PreAuthorize;
+
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+* Autorizacion a nivel de metodo: solo quien tenga el permiso
+* REPORTES_VER (rol ADMIN). Si no lo tiene, Spring lanza
+* AccessDeniedException y GlobalExceptionHandler responde 403.
+*/
 @RestController
-@RequestMapping("/api/reportes")
+@RequestMapping("/api/v1/reportes")
+@PreAuthorize("hasAuthority('REPORTES_VER')")
 public class ReporteController {
 
     private final ReporteService reporteService;
