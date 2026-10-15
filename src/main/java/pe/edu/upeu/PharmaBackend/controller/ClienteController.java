@@ -11,7 +11,7 @@ import pe.edu.upeu.PharmaBackend.service.service.ClienteService;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/clientes")
+@RequestMapping({"/api/v1/clientes", "/api/clientes"})
 public class ClienteController {
 
     private final ClienteService clienteService;

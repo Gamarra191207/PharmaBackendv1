@@ -80,24 +80,26 @@ public class SecurityConfig {
 
                 // Catalogo: todos leen; solo ADMIN y ALMACENERO escriben
                 .requestMatchers(HttpMethod.GET,
-                    "/api/v1/categorias/**", "/api/v1/productos/**")
+                    "/api/v1/categorias/**", "/api/v1/productos/**",
+                    "/api/categorias/**", "/api/productos/**")
                     .hasAuthority(CATALOGO_LEER.name())
                 .requestMatchers(
-                    "/api/v1/categorias/**", "/api/v1/productos/**")
+                    "/api/v1/categorias/**", "/api/v1/productos/**",
+                    "/api/categorias/**", "/api/productos/**")
                     .hasAuthority(CATALOGO_ESCRIBIR.name())
 
                 // Clientes
-                .requestMatchers(HttpMethod.GET, "/api/v1/clientes/**")
+                .requestMatchers(HttpMethod.GET, "/api/v1/clientes/**", "/api/clientes/**")
                     .hasAuthority(CLIENTES_LEER.name())
-                .requestMatchers("/api/v1/clientes/**")
+                .requestMatchers("/api/v1/clientes/**", "/api/clientes/**")
                     .hasAuthority(CLIENTES_ESCRIBIR.name())
 
                 // Ventas
-                .requestMatchers(HttpMethod.POST, "/api/v1/ventas")
+                .requestMatchers(HttpMethod.POST, "/api/v1/ventas", "/api/ventas")
                     .hasAuthority(VENTAS_REGISTRAR.name())
-                .requestMatchers(HttpMethod.GET, "/api/v1/ventas/**")
+                .requestMatchers(HttpMethod.GET, "/api/v1/ventas/**", "/api/ventas/**")
                     .hasAuthority(VENTAS_LEER.name())
-                .requestMatchers("/api/v1/ventas/**")
+                .requestMatchers("/api/v1/ventas/**", "/api/ventas/**")
                     .hasAuthority(VENTAS_REGISTRAR.name())
 
                 // Administracion de la seguridad

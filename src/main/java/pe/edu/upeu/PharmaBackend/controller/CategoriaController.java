@@ -9,7 +9,7 @@ import pe.edu.upeu.PharmaBackend.exception.RecursosNoEncontradosException;
 import pe.edu.upeu.PharmaBackend.service.service.CategoriaService;
 
 @RestController
-@RequestMapping("/api/categorias")
+@RequestMapping({"/api/v1/categorias", "/api/categorias"})
 public class CategoriaController {
 
     private final CategoriaService categoriaService;
