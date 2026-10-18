@@ -9,7 +9,7 @@ import pe.edu.upeu.PharmaBackend.exception.RecursosNoEncontradosException;
 import pe.edu.upeu.PharmaBackend.service.service.ProductoService;
 
 @RestController
-@RequestMapping("/api/productos")
+@RequestMapping({"/api/v1/productos", "/api/productos"})
 public class ProductoController {
     private final ProductoService productoService;
 
