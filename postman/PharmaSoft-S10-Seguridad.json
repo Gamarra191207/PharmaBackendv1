@@ -453,6 +453,124 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "05 - Contraseña y Roles (Parte B)",
+			"item": [
+				{
+					"name": "B1 - Cambio de Contraseña",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenVendedor}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"passwordActual\": \"Vendedor2026*\",\n    \"passwordNueva\": \"NuevaClave2026*\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "B2 - Asignar Roles a Usuario (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenAdmin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rolIds\": [2, 3]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/2/roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"2",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "B3 - Cambiar Estado de Usuario (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenAdmin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"estado\": false\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/2/estado",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"2",
+								"estado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"variable": [
