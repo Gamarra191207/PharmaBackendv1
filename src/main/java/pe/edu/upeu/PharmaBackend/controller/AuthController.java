@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
+import pe.edu.upeu.PharmaBackend.dto.auth.CambioPasswordRequestDTO;
 import pe.edu.upeu.PharmaBackend.dto.auth.LoginRequestDTO;
 import pe.edu.upeu.PharmaBackend.dto.auth.LoginResponseDTO;
 import pe.edu.upeu.PharmaBackend.dto.auth.UsuarioResponseDTO;
@@ -41,4 +43,17 @@ public class AuthController {
     public ResponseEntity<UsuarioResponseDTO> me(Authentication authentication) {
         return ResponseEntity.ok(authService.usuarioActual(authentication.getName()));
     }
+
+    /*
+    * Protegido. Requiere token, cualquier rol.
+    * Permite al usuario autenticado cambiar su propia contraseña.
+    */
+    @PutMapping("/password")
+    public ResponseEntity<Void> cambiarPassword(
+            @Valid @RequestBody CambioPasswordRequestDTO request,
+            Authentication authentication) {
+        authService.cambiarPassword(authentication.getName(), request);
+        return ResponseEntity.noContent().build();
+    }
 }
+

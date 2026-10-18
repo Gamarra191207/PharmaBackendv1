@@ -8,17 +8,21 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import pe.edu.upeu.PharmaBackend.dto.auth.CambioPasswordRequestDTO;
 import pe.edu.upeu.PharmaBackend.dto.auth.LoginRequestDTO;
 import pe.edu.upeu.PharmaBackend.dto.auth.LoginResponseDTO;
 import pe.edu.upeu.PharmaBackend.dto.auth.UsuarioResponseDTO;
 import pe.edu.upeu.PharmaBackend.entity.Usuario;
 import pe.edu.upeu.PharmaBackend.exception.RecursoNoEncontradoException;
+import pe.edu.upeu.PharmaBackend.exception.ReglaNegocioException;
 import pe.edu.upeu.PharmaBackend.mapper.UsuarioMapper;
 import pe.edu.upeu.PharmaBackend.repository.UsuarioRepository;
 import pe.edu.upeu.PharmaBackend.security.JwtService;
 import pe.edu.upeu.PharmaBackend.security.PermisosPorRol;
 import pe.edu.upeu.PharmaBackend.service.service.AuthService;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Service
@@ -31,16 +35,19 @@ public class AuthServiceImpl implements AuthService {
     private final JwtService jwtService;
     private final UsuarioRepository usuarioRepository;
     private final UsuarioMapper usuarioMapper;
+    private final PasswordEncoder passwordEncoder;
 
     public AuthServiceImpl(
             AuthenticationManager authenticationManager,
             JwtService jwtService,
             UsuarioRepository usuarioRepository,
-            UsuarioMapper usuarioMapper) {
+            UsuarioMapper usuarioMapper,
+            PasswordEncoder passwordEncoder) {
         this.authenticationManager = authenticationManager;
         this.jwtService = jwtService;
         this.usuarioRepository = usuarioRepository;
         this.usuarioMapper = usuarioMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
     /*
@@ -86,9 +93,33 @@ public class AuthServiceImpl implements AuthService {
         return usuarioMapper.toUsuarioResponse(buscar(username));
     }
 
+    @Override
+    @Transactional
+    public void cambiarPassword(String username, CambioPasswordRequestDTO request) {
+        Usuario usuario = buscar(username);
+
+        if (!passwordEncoder.matches(request.getPasswordActual(), usuario.getPassword())) {
+            throw new ReglaNegocioException("La contraseña actual no es correcta");
+        }
+
+        if (passwordEncoder.matches(request.getPasswordNueva(), usuario.getPassword())) {
+            throw new ReglaNegocioException("La nueva contraseña debe ser distinta de la actual");
+        }
+
+        if (request.getPasswordNueva().getBytes(StandardCharsets.UTF_8).length > 72) {
+            throw new ReglaNegocioException("La contraseña no puede superar 72 bytes");
+        }
+
+        usuario.setPassword(passwordEncoder.encode(request.getPasswordNueva()));
+        usuarioRepository.save(usuario);
+
+        log.info("Contraseña actualizada exitosamente para el usuario: {}", username);
+    }
+
     private Usuario buscar(String username) {
         return usuarioRepository.findByUsernameIgnoreCase(username)
             .orElseThrow(() -> new RecursoNoEncontradoException(
                 "Usuario no encontrado: " + username));
     }
 }
+
