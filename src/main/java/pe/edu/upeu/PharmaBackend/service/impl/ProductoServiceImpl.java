@@ -1,5 +1,7 @@
 package pe.edu.upeu.PharmaBackend.service.impl;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.PharmaBackend.dto.ProductoRequestDTO;
@@ -19,58 +21,61 @@ public class ProductoServiceImpl implements ProductoService {
     private final CategoriaRepository categoriaRepository;
 
     public ProductoServiceImpl(ProductoRepository productoRepository, CategoriaRepository categoriaRepository){
-        this.productoRepository= productoRepository;
-        this.categoriaRepository=categoriaRepository;
+        this.productoRepository = productoRepository;
+        this.categoriaRepository = categoriaRepository;
     }
 
     @Override
     @Transactional
+    @CacheEvict(cacheNames = "productos", allEntries = true)
     public ProductoResponseDTO create(ProductoRequestDTO dto){
-        String nombre =dto.getNombre().trim();
+        String nombre = dto.getNombre().trim();
 
         if (productoRepository.existsByNombreIgnoreCase(nombre)){
             throw new ReglaNegocioException("Ya existe un producto con el nombre" + nombre);
         }
 
-        Categoria categoria=buscarCategoria(dto.getId_categoria());
+        Categoria categoria = buscarCategoria(dto.getId_categoria());
 
-        Producto producto=new Producto();
+        Producto producto = new Producto();
         producto.setNombre(nombre);
         producto.setPrecio(dto.getPrecio());
         producto.setStock(dto.getStock());
         producto.setEstado(dto.getEstado());
         producto.setCategoria(categoria);
 
-        Producto productocreado=productoRepository.save(producto);
+        Producto productocreado = productoRepository.save(producto);
 
         return convertirResponse(productocreado);
-    };
+    }
 
     @Override
     @Transactional
+    @CacheEvict(cacheNames = "productos", allEntries = true)
     public ProductoResponseDTO update(Long id, ProductoRequestDTO dto){
-        Producto producto=productoRepository.findById(id)
-                .orElseThrow(()->
-                        new RecursosNoEncontradosException("Producto no encontrado con el id:"+ id));
+        Producto producto = productoRepository.findById(id)
+                .orElseThrow(() ->
+                        new RecursosNoEncontradosException("Producto no encontrado con el id:" + id));
 
-        String nombre= dto.getNombre().trim();
-        if (productoRepository.existsByNombreIgnoreCaseAndIdNot(nombre,id)){
-            throw new ReglaNegocioException("Ya existe un producto con el nombre: "+nombre);
+        String nombre = dto.getNombre().trim();
+        if (productoRepository.existsByNombreIgnoreCaseAndIdNot(nombre, id)){
+            throw new ReglaNegocioException("Ya existe un producto con el nombre: " + nombre);
         }
 
-        Categoria categoria=buscarCategoria(dto.getId_categoria());
+        Categoria categoria = buscarCategoria(dto.getId_categoria());
         producto.setNombre(nombre);
         producto.setPrecio(dto.getPrecio());
         producto.setStock(dto.getStock());
         producto.setEstado(dto.getEstado());
         producto.setCategoria(categoria);
 
-        Producto productoActualizado=productoRepository.save(producto);
+        Producto productoActualizado = productoRepository.save(producto);
         return convertirResponse(productoActualizado);
     }
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productos", key = "'id-' + #id")
     public Optional<ProductoResponseDTO> read(Long id){
         return productoRepository.findById(id)
                 .map(this::convertirResponse);
@@ -78,14 +83,16 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional
+    @CacheEvict(cacheNames = "productos", allEntries = true)
     public void delete (Long id){
-        Producto producto=productoRepository.findById(id)
-                .orElseThrow(()->new RecursosNoEncontradosException("Producto no encontrado con el id:"+ id));
+        Producto producto = productoRepository.findById(id)
+                .orElseThrow(() -> new RecursosNoEncontradosException("Producto no encontrado con el id:" + id));
         productoRepository.delete(producto);
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productos", key = "'todas'")
     public Iterable<ProductoResponseDTO> readAll(){
         return productoRepository.findAll()
                 .stream()
@@ -95,8 +102,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     private Categoria buscarCategoria(Long id_categoria){
         return categoriaRepository.findById(id_categoria)
-                .orElseThrow(()->new RecursosNoEncontradosException("Categoria no encontrada con id:"+ id_categoria));
-
+                .orElseThrow(() -> new RecursosNoEncontradosException("Categoria no encontrada con id:" + id_categoria));
     }
 
     private ProductoResponseDTO convertirResponse(Producto producto){
@@ -109,7 +115,6 @@ public class ProductoServiceImpl implements ProductoService {
                 producto.getFecha_creacion(),
                 producto.getFecha_modificacion(),
                 producto.getCategoria().getId()
-                );
+        );
     }
-
 }
