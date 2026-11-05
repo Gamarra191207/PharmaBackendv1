@@ -23,6 +23,8 @@ springdoc:
 # En produccion el secreto NUNCA se escribe en el repositorio:
 # llega por variable de entorno (minimo 32 bytes en Base64).
 app:
+  cors:
+    allowed-origins: ${FRONTEND_ORIGINS:http://localhost:8081}
   jwt:
     secret: ${JWT_SECRET}
     expiracion-minutos: ${JWT_EXPIRACION_MINUTOS:30}

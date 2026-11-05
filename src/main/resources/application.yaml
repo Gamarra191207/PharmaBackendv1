@@ -25,3 +25,7 @@ management:
       show-details: when-authorized
       probes:
         enabled: true
+
+app:
+  cors:
+    allowed-origins: ${FRONTEND_ORIGINS:http://localhost:8081,http://localhost:4200}
