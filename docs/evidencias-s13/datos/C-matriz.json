@@ -1,0 +1,32 @@
+{
+  "C-01": {
+    "creacion": 201,
+    "categoria_id": 2,
+    "lista": "presente",
+    "clave_lista_tras_post": 0
+  },
+  "C-02": {
+    "antes": "AAA S13 5627e9",
+    "despues": "AAA Renombrada 5627e9",
+    "claves_lista_tras_put": 0
+  },
+  "C-03": {
+    "antes": 12.5,
+    "detalle": 17.25,
+    "lista": 17.25,
+    "claves_lista_detalle_tras_put": 0
+  },
+  "C-04": {
+    "antes": 11,
+    "cantidad": 2,
+    "despues": 9,
+    "venta_id": 1,
+    "requestId": "ccd1eac9"
+  },
+  "C-05": {
+    "categoria_id": 3,
+    "eliminacion": 204,
+    "lista": "ausente",
+    "clave_lista_tras_delete": 0
+  }
+}

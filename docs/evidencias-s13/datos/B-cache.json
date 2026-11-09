@@ -1,0 +1,332 @@
+{
+  "curl": {
+    "/index.html": [
+      "HTTP/1.1 200 OK",
+      "Cache-Control: no-cache"
+    ],
+    "/main-XLWJ7HLA.js": [
+      "HTTP/1.1 200 OK",
+      "Cache-Control: public, max-age=31536000, immutable"
+    ],
+    "/chunk-DFSBfCBF.js": [
+      "HTTP/1.1 200 OK",
+      "Cache-Control: public, max-age=31536000, immutable"
+    ],
+    "/styles-GH47AYS2.css": [
+      "HTTP/1.1 200 OK",
+      "Cache-Control: public, max-age=31536000, immutable"
+    ],
+    "/api/v1/categorias": [
+      "HTTP/1.1 200 ",
+      "Cache-Control: no-cache, no-store, max-age=0, must-revalidate"
+    ]
+  },
+  "recarga_productos": [
+    {
+      "ruta": "/productos",
+      "status": 304,
+      "disco": false,
+      "cache_control": "no-cache",
+      "origen": "red"
+    },
+    {
+      "ruta": "/chunk-BoLM0wba.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-CgimCc6T.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-kiu1T7UI.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/main-XLWJ7HLA.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/styles-GH47AYS2.css",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-nHGI_y1l.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-CStbTxRS.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-C1XRvdbm.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-DDzd4jfk.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-Cv0TBCmL.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-D1zKcLMo.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/api/v1/categorias",
+      "status": 200,
+      "disco": false,
+      "cache_control": "no-cache, no-store, max-age=0, must-revalidate",
+      "origen": "red"
+    }
+  ],
+  "recarga_ventas": [
+    {
+      "ruta": "/ventas",
+      "status": 304,
+      "disco": false,
+      "cache_control": "no-cache",
+      "origen": "red"
+    },
+    {
+      "ruta": "/chunk-BoLM0wba.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-CgimCc6T.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-kiu1T7UI.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/main-XLWJ7HLA.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/styles-GH47AYS2.css",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-DFSBfCBF.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-CStbTxRS.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-C1XRvdbm.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-DDzd4jfk.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-Cv0TBCmL.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-D1zKcLMo.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-D1ExCyrM.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-CdFvI4dT.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    }
+  ],
+  "despliegue": [
+    {
+      "ruta": "/productos",
+      "status": 200,
+      "disco": false,
+      "cache_control": "no-cache",
+      "origen": "red"
+    },
+    {
+      "ruta": "/chunk-BoLM0wba.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-CgimCc6T.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-kiu1T7UI.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/styles-GH47AYS2.css",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/main-KZYAQ4SN.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "red"
+    },
+    {
+      "ruta": "/chunk-Ib87C9Lb.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "red"
+    },
+    {
+      "ruta": "/chunk-CStbTxRS.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-Cv0TBCmL.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-D1zKcLMo.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-C1XRvdbm.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "memoria"
+    },
+    {
+      "ruta": "/chunk-Bq4aHixv.js",
+      "status": 200,
+      "disco": false,
+      "cache_control": "public, max-age=31536000, immutable",
+      "origen": "red"
+    },
+    {
+      "ruta": "/api/v1/categorias",
+      "status": 200,
+      "disco": false,
+      "cache_control": "no-cache, no-store, max-age=0, must-revalidate",
+      "origen": "red"
+    }
+  ],
+  "hashes_salen": [
+    "chunk-BXKlRlhz.js",
+    "chunk-BlIG5cv0.js",
+    "chunk-C7D650tS.js",
+    "chunk-CdHjBZvE.js",
+    "chunk-CwVV17F2.js",
+    "chunk-DDzd4jfk.js",
+    "chunk-DFSBfCBF.js",
+    "chunk-nHGI_y1l.js",
+    "main-XLWJ7HLA.js"
+  ],
+  "hashes_entran": [
+    "chunk-B9br_B_j.js",
+    "chunk-Bj8cHtHN.js",
+    "chunk-Bq4aHixv.js",
+    "chunk-Bq68CV_i.js",
+    "chunk-CrfHiwdf.js",
+    "chunk-CuAjkfai.js",
+    "chunk-Ib87C9Lb.js",
+    "chunk-cw415isp.js",
+    "main-KZYAQ4SN.js"
+  ]
+}

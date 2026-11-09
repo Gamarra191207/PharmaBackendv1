@@ -1,0 +1,50 @@
+{
+  "availableTags": [
+    {
+      "tag": "exception",
+      "values": [
+        "none"
+      ]
+    },
+    {
+      "tag": "method",
+      "values": [
+        "POST"
+      ]
+    },
+    {
+      "tag": "error",
+      "values": [
+        "none"
+      ]
+    },
+    {
+      "tag": "outcome",
+      "values": [
+        "SUCCESS"
+      ]
+    },
+    {
+      "tag": "status",
+      "values": [
+        "201"
+      ]
+    }
+  ],
+  "baseUnit": "seconds",
+  "measurements": [
+    {
+      "statistic": "COUNT",
+      "value": 1.0
+    },
+    {
+      "statistic": "TOTAL_TIME",
+      "value": 0.1673411
+    },
+    {
+      "statistic": "MAX",
+      "value": 0.1673411
+    }
+  ],
+  "name": "http.server.requests"
+}

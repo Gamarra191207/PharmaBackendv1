@@ -1,0 +1,99 @@
+{
+  "Redis encendido": {
+    "publico": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    },
+    "admin": {
+      "components": {
+        "db": {
+          "details": {
+            "database": "Oracle",
+            "validationQuery": "isValid()"
+          },
+          "status": "UP"
+        },
+        "livenessState": {
+          "status": "UP"
+        },
+        "ping": {
+          "status": "UP"
+        },
+        "readinessState": {
+          "status": "UP"
+        },
+        "redis": {
+          "details": {
+            "version": "7.4.12"
+          },
+          "status": "UP"
+        },
+        "ssl": {
+          "details": {
+            "expiringChains": [],
+            "invalidChains": [],
+            "validChains": []
+          },
+          "status": "UP"
+        }
+      },
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    }
+  },
+  "Redis apagado": {
+    "publico": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "DOWN"
+    },
+    "admin": {
+      "components": {
+        "db": {
+          "details": {
+            "database": "Oracle",
+            "validationQuery": "isValid()"
+          },
+          "status": "UP"
+        },
+        "livenessState": {
+          "status": "UP"
+        },
+        "ping": {
+          "status": "UP"
+        },
+        "readinessState": {
+          "status": "UP"
+        },
+        "redis": {
+          "details": {
+            "error": "org.springframework.dao.QueryTimeoutException: Redis command timed out"
+          },
+          "status": "DOWN"
+        },
+        "ssl": {
+          "details": {
+            "expiringChains": [],
+            "invalidChains": [],
+            "validChains": []
+          },
+          "status": "UP"
+        }
+      },
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "DOWN"
+    }
+  },
+  "Redis restaurado": "UP"
+}

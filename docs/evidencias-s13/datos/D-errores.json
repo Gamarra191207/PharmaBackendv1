@@ -1,0 +1,12 @@
+{
+  "400": {
+    "cabecera": "4f6a11d6",
+    "cuerpo": "4f6a11d6",
+    "mensaje": "Existen errores de validación"
+  },
+  "401": {
+    "cabecera": "e77c8f77",
+    "cuerpo": "e77c8f77",
+    "mensaje": "Debe iniciar sesión para acceder a este recurso"
+  }
+}

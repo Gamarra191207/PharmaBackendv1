@@ -1,0 +1,156 @@
+{
+  "categorias": {
+    "peticiones": 20,
+    "primer_ms": 1073.86,
+    "media_restantes_ms": 28.93,
+    "tiempos_ms": [
+      1073.86,
+      50.14,
+      25.14,
+      24.85,
+      24.11,
+      46.35,
+      22.82,
+      37.01,
+      24.43,
+      23.72,
+      42.68,
+      46.91,
+      22.22,
+      22.96,
+      24.01,
+      24.62,
+      21.91,
+      21.53,
+      22.11,
+      22.07
+    ],
+    "metricas": {
+      "hit": {
+        "availableTags": [
+          {
+            "tag": "cache.manager",
+            "values": [
+              "cacheManager"
+            ]
+          },
+          {
+            "tag": "name",
+            "values": [
+              "categorias"
+            ]
+          }
+        ],
+        "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 19.0
+          }
+        ],
+        "name": "cache.gets"
+      },
+      "miss": {
+        "availableTags": [
+          {
+            "tag": "cache.manager",
+            "values": [
+              "cacheManager"
+            ]
+          },
+          {
+            "tag": "name",
+            "values": [
+              "categorias"
+            ]
+          }
+        ],
+        "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 1.0
+          }
+        ],
+        "name": "cache.gets"
+      }
+    }
+  },
+  "productos": {
+    "peticiones": 20,
+    "primer_ms": 74.61,
+    "media_restantes_ms": 25.26,
+    "tiempos_ms": [
+      74.61,
+      22.69,
+      22.8,
+      33.3,
+      20.96,
+      22.51,
+      22.43,
+      21.61,
+      38.76,
+      22.98,
+      20.99,
+      23.06,
+      38.3,
+      21.13,
+      21.22,
+      21.17,
+      23.8,
+      20.78,
+      22.5,
+      38.97
+    ],
+    "metricas": {
+      "hit": {
+        "availableTags": [
+          {
+            "tag": "cache.manager",
+            "values": [
+              "cacheManager"
+            ]
+          },
+          {
+            "tag": "name",
+            "values": [
+              "productos"
+            ]
+          }
+        ],
+        "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 19.0
+          }
+        ],
+        "name": "cache.gets"
+      },
+      "miss": {
+        "availableTags": [
+          {
+            "tag": "cache.manager",
+            "values": [
+              "cacheManager"
+            ]
+          },
+          {
+            "tag": "name",
+            "values": [
+              "productos"
+            ]
+          }
+        ],
+        "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 1.0
+          }
+        ],
+        "name": "cache.gets"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[
+  "2026-11-08 19:41:54,508 WARN  [ccd1eac9] o.h.v.i.m.a.CascadingMetaDataBuilder - HV000271: Using `@Valid` on a container (java.util.List) is deprecated. You should apply the annotation on the type argument(s). Affected element: detalles",
+  "2026-11-08 19:41:54,575 INFO  [ccd1eac9] p.e.u.P.s.impl.VentaServiceImpl - Inicio de registro de venta | items=1",
+  "2026-11-08 19:41:54,619 INFO  [ccd1eac9] p.e.u.P.s.impl.VentaServiceImpl - Venta preparada para confirmar | ventaId=1 | items=1",
+  "2026-11-08 19:41:54,645 INFO  [ccd1eac9] p.e.u.P.config.RequestIdFilter - POST /api/v1/ventas -> 201 (167 ms)"
+]

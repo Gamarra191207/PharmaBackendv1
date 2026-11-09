@@ -1,0 +1,13 @@
+{
+  "productos_http": 200,
+  "publico": {
+    "groups": [
+      "liveness",
+      "readiness"
+    ],
+    "status": "DOWN"
+  },
+  "redis_admin": "DOWN",
+  "oracle_admin": "UP",
+  "liveness": "UP"
+}

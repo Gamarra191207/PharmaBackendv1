@@ -1,0 +1,50 @@
+{
+  "after": {
+    "ensayos": [
+      {
+        "bytes_primera_pantalla": 144500,
+        "clic_a_ventas_ms": 344,
+        "login_a_ventas_ms": 3716
+      },
+      {
+        "bytes_primera_pantalla": 144499,
+        "clic_a_ventas_ms": 344,
+        "login_a_ventas_ms": 3697
+      },
+      {
+        "bytes_primera_pantalla": 144498,
+        "clic_a_ventas_ms": 346,
+        "login_a_ventas_ms": 3699
+      }
+    ],
+    "mediana": {
+      "bytes_primera_pantalla": 144499,
+      "clic_a_ventas_ms": 344,
+      "login_a_ventas_ms": 3699
+    }
+  },
+  "preload": {
+    "ensayos": [
+      {
+        "bytes_primera_pantalla": 181266,
+        "clic_a_ventas_ms": 53,
+        "login_a_ventas_ms": 3434
+      },
+      {
+        "bytes_primera_pantalla": 181265,
+        "clic_a_ventas_ms": 63,
+        "login_a_ventas_ms": 3452
+      },
+      {
+        "bytes_primera_pantalla": 181265,
+        "clic_a_ventas_ms": 137,
+        "login_a_ventas_ms": 3534
+      }
+    ],
+    "mediana": {
+      "bytes_primera_pantalla": 181265,
+      "clic_a_ventas_ms": 63,
+      "login_a_ventas_ms": 3452
+    }
+  }
+}
