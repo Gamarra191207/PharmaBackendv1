@@ -16,9 +16,9 @@ spring:
         format-sql: false
 springdoc:
   swagger-ui:
-    enable: false
+    enabled: false
   api-docs:
-    enable: false
+    enabled: false
 
 # En produccion el secreto NUNCA se escribe en el repositorio:
 # llega por variable de entorno (minimo 32 bytes en Base64).

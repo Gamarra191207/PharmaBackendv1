@@ -85,6 +85,10 @@ public class SecurityConfig {
                     "/api/v1/categorias/**", "/api/v1/productos/**",
                     "/api/categorias/**", "/api/productos/**")
                     .hasAuthority(CATALOGO_LEER.name())
+                .requestMatchers(HttpMethod.HEAD,
+                    "/api/v1/categorias/**", "/api/v1/productos/**",
+                    "/api/categorias/**", "/api/productos/**")
+                    .hasAuthority(CATALOGO_LEER.name())
                 .requestMatchers(
                     "/api/v1/categorias/**", "/api/v1/productos/**",
                     "/api/categorias/**", "/api/productos/**")

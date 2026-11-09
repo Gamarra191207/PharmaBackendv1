@@ -34,10 +34,7 @@ public class ClienteServiceImpl implements ClienteService {
     public ClienteResponseDTO create(
             ClienteRequestDTO request) {
 
-        log.info(
-                "Registrando cliente con DNI={}",
-                request.getDni()
-        );
+        log.info("Inicio de registro de cliente");
 
         String dni = request.getDni().trim();
         String email = request.getEmail()
