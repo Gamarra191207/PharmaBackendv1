@@ -2,7 +2,9 @@ package pe.edu.upeu.PharmaBackend.security;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.MDC;
 import org.springframework.http.MediaType;
+import pe.edu.upeu.PharmaBackend.config.RequestIdFilter;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -34,6 +36,7 @@ final class RespuestaErrorSeguridad {
             + "\"error\":\"" + escapar(error) + "\","
             + "\"message\":\"" + escapar(mensaje) + "\","
             + "\"path\":\"" + escapar(request.getRequestURI()) + "\","
+            + "\"requestId\":\"" + escapar(MDC.get(RequestIdFilter.CLAVE_MDC)) + "\","
             + "\"validationErrors\":null"
             + "}";
 
